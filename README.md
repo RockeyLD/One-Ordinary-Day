@@ -3,7 +3,7 @@
 [![en](https://img.shields.io/badge/docs-English-blue.svg)](README.md)
 [![zh-CN](https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87-red.svg)](README.zh-CN.md)
 
-A first-person interactive piece about one ordinary school day with narcolepsy — a class group chat, a maths exam, and the walk home. You type, you write, you cross the road. Then you are simply not there.
+A first-person interactive piece about one ordinary school day with narcolepsy — a class group chat, a maths exam, and the walk home. You type, you write, you cross the road. Then you are simply asleep.
 
 Official Link: [https://rockeyld.github.io/One-Ordinary-Day/](https://rockeyld.github.io/One-Ordinary-Day/)
 
