@@ -3,7 +3,7 @@
 [![en](https://img.shields.io/badge/docs-English-blue.svg)](README.md)
 [![zh-CN](https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87-red.svg)](README.zh-CN.md)
 
-一件第一人称的交互作品，记录发作性睡病患者的普通一天——班级群里的回复、一场数学考试、放学后过马路。你打字、写字、走路。然后你就不在了。
+一件第一人称的交互作品，记录发作性睡病患者的普通一天——班级群里的回复、一场数学考试、放学后过马路。你打字、写字、走路。然后你就睡着了。
 
 正式链接：[https://rockeyld.github.io/One-Ordinary-Day/](https://rockeyld.github.io/One-Ordinary-Day/)
 
