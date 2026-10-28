@@ -5,7 +5,7 @@
 
 A first-person interactive piece about one ordinary school day with narcolepsy — a class group chat, a maths exam, and the walk home. You type, you write, you cross the road. Then you are simply not there.
 
-Official Link: [https://rockeyld.github.io/Narcolepsy-One-Ordinary-Day/](https://rockeyld.github.io/Narcolepsy-One-Ordinary-Day/)
+Official Link: [https://rockeyld.github.io/One-Ordinary-Day/](https://rockeyld.github.io/One-Ordinary-Day/)
 
 ![Narcolepsy · One Ordinary Day](Image/02-chat.jpg)
 
