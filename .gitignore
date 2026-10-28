@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# editor / agent workspace
+.workbuddy/
+.vscode/
+.idea/
+
+# local dev artifacts (iteration screenshots live here; only Image/ ships)
+preview-*.png
+s[0-9]-*.png
+s[0-9][0-9]-*.png
+node_modules/
+package-lock.json
