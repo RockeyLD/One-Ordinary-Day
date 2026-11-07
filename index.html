@@ -15,26 +15,46 @@
   · 第一幕（班级群打字 → 黑屏 → 乱码）：潘集阳团队（暨南大学附属
     第一医院）2026 年报道的 20 岁大学生病例——白天清醒状态下使
     用手机打字时突发短暂意识丧失、手部继续机械动作。
+    频率按真实感收窄：全幕只断电一次。信息量放在结尾——往上翻聊
+    天记录，今天早上 8:47 起已经发作过三次，同学早就习惯了。
   · 第二幕（考试中失控书写）：Sahu 等 2019（Cureus）18 岁女性发
-    作性睡病患者病例——考试中 "irrelevant writing during
+    作性睡病病友的病例——考试中 "irrelevant writing during
     examinations"，试卷出现与题目无关的潦草内容，本人无记忆。
-    失控书写的四种表现（字体变形 / 重复书写 / 写错位置 / 笔迹混
-    乱）对应该病例描述与 Morandin 等乱码三族分类。
-  · 乱码三族（重复 / 插入语 / 语序错乱）：Morandin 等对患者文本
-    产出的分类研究。第一幕 makeGib() 按此实现——重复族 40%
-    （重写刚写的字）、插入族 22%（混入无关词）、键串族 28%
-    （潘集阳 2026 病例：动作流畅但产出无意义相邻键串）、语序族
-    在发作 ≥2 次后以 40% 概率附加对调相邻字；产出随发作次数退化。
-  · 发作时长：微睡眠为秒级；白天清醒时的自动行为可持续数分钟
-    （醒后失忆）——第二幕"时钟从 2:05 跳到 2:12"对应数分钟级
-    自动行为，最终 3:30 的长发作对应更长的意识丧失。
+    失控书写按四种表现实现：重复书写 / 写错位置（把这一题的答案写到
+    另一题横线上）/ 整行重抄 / 笔迹变形。产出始终是"和卷面同源的碎
+    片"——不会冒出与题目无关的句子。
+  · 乱码族：Morandin & Bruck 2013（Open Sleep J 6:1-7）对 10 名
+    病友的质性研究——重复（perseverative action）、插入（item
+    intrusion）、语序错乱（sequencing error）。画面上只演两族：
+    makeGib() 重复 40%、同音错字 60%（中文输入法下"音对了字错了"，
+    属本作推断、非文献结论）；garble() 另做 1–2 处相邻字序对调（局部
+    对调，不是整句打乱）。插入族不演——混进无关词在画面上会被读成
+    "胡写"，而不是"注意力掉线"。
+  · 触发方式：发作不按"打了多少字"计算。手机一幕只在按下发送的那一
+    下断片（框里的字自己改写，人已经不在）；考试一幕按时间走——翻到
+    某一题就开始计时，跟他打字多快、打多少无关。
+  · 猝倒（cataplexy）：NT1 型约七成病友有，典型触发是情绪（大笑、
+    生气、突然的惊喜）。第二幕后段——被后排同学的笑声触发，膝盖
+    一软扶住桌沿。意识清楚、能听见，所以这里绝不黑屏。
+  · 困（EDS）：不做视觉化的"眼皮压下来"——那会把病演成表演。只在
+    开场用一句"昨晚醒过四次"点出夜间睡眠破碎，剩下的交给黑屏。
+  · 发作时长：微睡眠为秒级；白天清醒时的自动行为可持续数分钟乃
+    至更长（醒后失忆）——第二幕时钟从 2:05 跳到 2:12 对应数分钟
+    级自动行为，3:30 的长发作对应更长的意识丧失。
   · 禁令一：不做「夜间睡眠发短信」框架——那是异态睡眠/药物诱发，
     不是发作性睡病。全部情节严格发生在白天清醒时段。
   · 禁令二：不做交通事故（碰撞）演出。第三幕（过马路）为「险情」
-    演出——失控偏移、急刹、喇叭，车全部停在安全距离内，观众最终
-    自己走完马路。依据：Avis 等 2014（SLEEP）——VR 过马路任务中
-    发作性睡病患者被车辆撞击次数约为对照组 2 倍（只引用，不演出
-    撞击本身）。
+    演出——失控偏移、急刹、喇叭，车全部停在安全距离内，司机下车
+    询问，观众最终自己走完马路。依据：Avis 等 2014（SLEEP）——
+    VR 过马路任务中发作性睡病病友被车辆撞击次数约为对照组 2 倍
+    （只引用，不演出撞击本身）。
+  · 数字口径：自动行为发生率取实证区间 20–40%（意大利 191 人队列
+    37.7%、IJSM 综述 20–40%）；"最高八成"是早期估计值，不作为发
+    病率；发病高峰 8–15 岁、约 1/3 在 15 岁前；夜间睡眠破碎
+    70–80%；确诊延迟 8–22 年（国外研究）。
+  · 片头明示：发作频率与时长经过压缩。结尾数据屏给出诊断与治疗
+    路径（PSG + MSLT；莫达非尼、替洛利生等）——不留下"无解"的
+    印象。
   ═══════════════════════════════════════════════════════════════
 -->
 <style>
@@ -68,7 +88,8 @@
     filter:blur(6px);pointer-events:none;
   }
   /* 3D 场景退为暗背景 */
-  #world3d{transition:opacity .85s ease, filter .85s ease}
+  /* 猝倒时画面塌下去：滤镜和形变一起缓动，不能一帧跳过去 */
+  #world3d{transition:opacity .85s ease, filter .7s ease, transform .7s cubic-bezier(.3,0,.4,1)}
   #world3d.dim{opacity:.16;filter:blur(2px)}
 
   /* ── 手机 ─────────────────────────────────── */
@@ -176,6 +197,11 @@
     opacity:0;pointer-events:none;display:flex;align-items:center;justify-content:center;
   }
   #blackout.on{opacity:1;pointer-events:all}
+
+  /* ── 猝倒：肌张力短暂丧失。意识是清楚的，所以不黑屏 ── */
+  body.cataplexy #world3d{filter:blur(1.6px) saturate(.55) brightness(.82);
+    transform:scale(1.022) rotate(.35deg)}
+  body.cataplexy #grade{opacity:.22}
   #blackcap{
     font-size:13px;letter-spacing:2px;color:#3d424a;
     opacity:0;transition:opacity .5s;
@@ -318,6 +344,8 @@
   .pName .fill i{font-style:normal;display:inline-block;width:64px;border-bottom:1px solid #55606a;height:11px}
   .q{margin-top:14px;position:relative;transition:opacity .4s}
   .q.dim{opacity:.32}
+  /* 翻到第二题时把第一题收起来——否则第二题的答题横线会被纸面裁掉，看不见也点不到 */
+  .q.gone{display:none}
   .qTag{font-size:13px;font-weight:700;color:#20242b;margin-bottom:5px}
   .stem{font-size:14.5px;color:#2c313a;line-height:1.55}
   .stem.expr{font-size:17px;letter-spacing:1px;margin-top:2px}
@@ -487,7 +515,10 @@
     padding:0 8vw;text-align:center;
   }
   #wordSeq.vis,#dataSeq.vis{opacity:1}
-  .seqLine{color:#e8eaee;font-size:clamp(19px,3vw,27px);line-height:1.75;letter-spacing:1px}
+  /* max-width 必须给：flex 的 align-items:center 会让子项按 max-content 撑开，
+     长句不换行、直接被屏幕右边切掉 */
+  .seqLine{color:#e8eaee;font-size:clamp(19px,3vw,27px);line-height:1.75;letter-spacing:1px;
+    max-width:100%;text-wrap:balance}
   #finalCard{
     position:fixed;inset:0;z-index:72;background:#000;
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
@@ -556,27 +587,26 @@
   <div id="examUI">
     <div id="paperWrap">
       <div id="paper">
-        <div class="pHead">八年级数学测验<span>时间：60 分钟</span><span class="score">得 分<br>评卷人</span></div>
+        <div class="pHead">高二数学测验<span>时间：60 分钟</span><span class="score">得 分<br>评卷人</span></div>
         <div class="pName"><span class="fill">姓名<i></i>　班级<i></i></span><span>2026 年 10 月</span></div>
 
         <div class="q" id="q1">
           <div class="qTag">一、计算题（第 1 题，共 1 题）</div>
-          <div class="stem expr">(125 + 75) × 4 − 180 ÷ 6</div>
+          <div class="stem expr">f(x) = x³ − 3x² + 2，求 f′(1)</div>
           <div class="refBox" id="ref1">参考步骤（照着写）：
-(125 + 75) × 4 − 180 ÷ 6
-= 200 × 4 − 30
-= 800 − 30
-= 770</div>
+f′(x) = 3x² − 6x
+f′(1) = 3 − 6
+= −3</div>
           <div class="ansLine">解：<span class="ans pulse" id="ans1"><input id="ansInput" autocomplete="off"></span></div>
           <button class="nextBtn" id="next1">写下一题 ▸</button>
         </div>
 
         <div class="q dim" id="q2">
           <div class="qTag">二、应用题（第 2 题）</div>
-          <div class="stem">小华骑自行车去图书馆：前半段路程速度 200 米/分钟，骑行 15 分钟；后半段路程速度 150 米/分钟，骑行 20 分钟。求：(1) 全程多少米？(2) 全程平均速度？</div>
+          <div class="stem">某工厂一月份生产零件 1000 件，之后每月产量比上月增长 10%。求：(1) 三月份的产量；(2) 前三个月的总产量。</div>
           <div class="refBox" id="ref2">参考步骤（照着写）：
-(1) 前半段距离 = 200 × 15 = 3000米　后半段距离 = 150 × 20 = 3000米　总距离 = 3000 + 3000 = 6000米
-(2) 总时间 = 15 + 20 = 35分钟　平均速度 = 6000 ÷ 35 ≈ 171.4米/分钟</div>
+(1) 三月份产量 = 1000 × 1.1² = 1210 件
+(2) 前三个月总产量 = 1000 + 1100 + 1210 = 3310 件</div>
           <div class="ansLine">解：<span class="ans" id="ans2"><input id="ansInput2" autocomplete="off"></span></div>
         </div>
 
@@ -693,7 +723,7 @@
     <div class="ovKick">发作性睡病 · 互动体验</div>
     <div class="ovTitle">早晨 9:15</div>
     <div class="ovBody">班长在班级群里等回复。<br>用键盘，照着灰色参考句打字，然后发送。</div>
-    <div class="ovNote">建议在电脑上体验（需要键盘）。</div>
+    <div class="ovNote">建议在电脑上体验（需要键盘）。<br>为便于体验，片中的发作频率与时长经过压缩——真实的病程远比这漫长，也远比这安静。</div>
     <button class="ovBtn" id="startBtn">开 始</button>
   </div>
 
@@ -911,22 +941,124 @@ function blackout(dur, {long=false, onWake=null}={}){   // cap 参数已废弃�
   }, dur);
 }
 
+/* ══════════ 镜头补间（位置 + 朝向，绝不硬切） ══════════ */
+let camTween = null;
+function endTween(t){
+  clearTimeout(t.safety);
+  if(t.cam){ t.cam.position.copy(t.p1); t.cam.quaternion.copy(t.q1); }
+  if(camTween === t) camTween = null;
+  t.done && t.done();
+}
+function tweenCam(cam, to, dur, done){
+  if(!cam){ done && done(); return; }
+  if(camTween) { clearTimeout(camTween.safety); camTween = null; }
+  const q1 = new THREE.Quaternion();
+  if(to.look){
+    const probe = new THREE.PerspectiveCamera();
+    probe.position.set(to.x, to.y, to.z);
+    probe.lookAt(to.look.x, to.look.y, to.look.z);
+    q1.copy(probe.quaternion);
+  }else{
+    q1.copy(cam.quaternion);
+  }
+  const t = {
+    cam,
+    p0: cam.position.clone(), q0: cam.quaternion.clone(),
+    p1: new THREE.Vector3(to.x, to.y, to.z), q1,
+    t: 0, dur: Math.max(0.05, FAST ? dur * 0.55 : dur), done: done || null,
+  };
+  // 兜底：没有渲染循环（自测 / 后台标签页）时也要走完，否则会卡住剧情
+  t.safety = setTimeout(()=>{ if(camTween === t) endTween(t); }, t.dur * 1000 + 160);
+  camTween = t;
+}
+function updateCamTween(dt){
+  if(!camTween) return;
+  const t = camTween;
+  t.t += dt;
+  const k = clamp(t.t / t.dur, 0, 1);
+  const e = k < 0.5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2;   // easeInOutCubic
+  t.cam.position.lerpVectors(t.p0, t.p1, e);
+  t.cam.quaternion.slerpQuaternions(t.q0, t.q1, e);
+  if(k >= 1) endTween(t);
+}
+
+/* ══════════ 猝倒 ══════════ */
+/* 猝倒：情绪（大笑 / 被全班盯着）触发的肌张力短暂丧失。
+   意识清楚、能听见、能记住——所以绝不黑屏，只让画面塌下去。
+   塌、撑、起三段逐帧缓动，不是一帧跳到低处再一帧弹回来。 */
+let catT = -1, catDur = 0, catWorld = null, catCam = null, catBase = null, catDone = null, catSafety = null;
+function cataplexy(dur=1600, done){
+  SFX.heart();
+  const w = classroomW || streetW;
+  const cam = w && w.cam;
+  catWorld = w || null; catCam = cam || null; catDone = done || null;
+  catBase = cam ? { y: cam.position.y, rx: cam.rotation.x, ry: cam.rotation.y, rz: cam.rotation.z } : null;
+  catT = 0;
+  catDur = Math.max(0.4, (FAST ? dur * 0.55 : dur) / 1000);
+  document.body.classList.add('cataplexy');
+  // 兜底：没有渲染循环（自测 / 后台标签页）时也要能结束，否则剧情卡死
+  clearTimeout(catSafety);
+  catSafety = setTimeout(()=>{ if(catT >= 0) endCataplexy(); }, catDur * 1000 + 120);
+}
+function endCataplexy(){
+  if(catCam && catBase){
+    catCam.position.y = catBase.y;
+    catCam.rotation.set(catBase.rx, catBase.ry, catBase.rz);
+  }
+  catT = -1; catWorld = null; catCam = null; catBase = null;
+  document.body.classList.remove('cataplexy');
+  const f = catDone; catDone = null;
+  f && f();
+}
+function updateCataplexy(dt){
+  if(catT < 0) return;
+  if(!catCam || !catBase || !world || world !== catWorld){ endCataplexy(); return; }
+  catT += dt;
+  const k = clamp(catT / catDur, 0, 1);
+  // 0–26%：腿先软下去；26–62%：撑住；62–100%：缓缓撑回来
+  let a;
+  if(k < 0.26){ a = Math.pow(clamp(k / 0.26, 0, 1), 1.8); }
+  else if(k < 0.62) a = 1;
+  else { a = Math.pow(clamp(1 - (k - 0.62) / 0.38, 0, 1), 1.7); }
+  // 撑不住的时候，身体在很轻地抖
+  const tremor = (k > 0.26 && k < 0.62)
+    ? Math.sin(catT * 31) * 0.005 + Math.sin(catT * 11.3) * 0.003 : 0;
+  if(!isFinite(a)) a = 0;                       // 兜底：绝不把镜头写坏
+  catCam.position.y = catBase.y - 0.42 * a + tremor;
+  catCam.rotation.set(catBase.rx - 0.07 * a,    // 头往下垂
+                      catBase.ry + 0.018 * a,
+                      catBase.rz + 0.06 * a);   // 身体往一侧倒
+  if(k >= 1) endCataplexy();
+}
+
 /* ══════════ 乱码（三族，有据可依，非随机噪音） ══════════
    依据：
-   · Morandin 等对发作性睡病自动行为文本产出的分类研究——错误
-     集中在三个家族，而非均匀随机的字母噪音：
-     ① 重复（perseveration）：反复重写刚写过的字/词
+   · Morandin & Bruck 2013（Open Sleep Journal 6:1-7）对 10 名病友
+     的质性研究——错误集中在几个家族，而非均匀随机的噪音：
+     ① 重复（perseverative action）：反复重写刚写过的字/词
      ② 插入（item intrusion）：混入与任务无关的词
      ③ 语序错乱（sequencing error）：字序被打乱
-   · 潘集阳团队 2026 病例：打字动作流畅地继续，但产出无意义
-     按键串（机械重复、落在键盘相邻键上）——"键串族"。
-   · 产出随发作推进而退化：发作次数越多，破碎越重。 */
-const INTRUDE = ['回家','睡觉','快点','水','明天','作业','老师','再见'];
+   · 潘集阳团队 2026 病例：打字动作流畅地继续，但产出无意义内容。
+   · 产出随发作推进而退化：发作次数越多，破碎越重。
+   · 同音族（本作推断，非文献结论）：中文输入法下注意力掉线时，
+     最常见的是"音对了、字错了"——不是突然蹦出拉丁字母。
+   · 屏幕上只演 ① 重复、③ 局部字序对调 和同音字：这三族产出的都还是
+     "此刻这件事"里的字。② 插入族（混进无关词）文献里有，但放在画面
+     上会被读成"胡写",所以不演。 */
 const KEYROW = [
   ['q','w','e','r','t','y','u','i','o','p'],
   ['a','s','d','f','g','h','j','k','l'],
   ['z','x','c','v','b','n','m'],
 ];
+const HOMO = {'好':'号','的':'得','我':'窝','可':'克','以':'已','参':'餐','加':'家',
+  '有':'又','空':'孔','周':'州','五':'午','下':'吓','没':'每','来':'莱','说':'硕',
+  '是':'事','明':'名','天':'添','回':'会','睡':'谁','快':'块','点':'典','上':'尚',
+  '去':'取','看':'砍','写':'些','完':'玩','到':'倒','过':'锅','题':'提','考':'拷'};
+function homophone(s){
+  let out = '';
+  for(const ch of s) out += (HOMO[ch] || ch);
+  return out;
+}
 let totalMicro = 0;   // 累计发作次数（决定产出退化程度）
 function keyString(n){
   let s = '';
@@ -940,20 +1072,22 @@ function makeGib(ctx){
   const cjk = ((ctx !== undefined ? ctx : input.value).match(/[\u4e00-\u9fff]/g) || []).join('');
   const r = Math.random();
   if(r < 0.40 && cjk.length >= 2){
-    // ① 重复族：把刚写的 1–2 个字重写 2–5 遍
-    const tail = cjk.slice(-(Math.random() < 0.35 ? 2 : 1));
-    const n = 2 + ((Math.random()*3)|0) + (totalMicro >= 2 ? 1 : 0);
+    // ① 重复族：把刚写的 1–2 个字再写一遍（perseveration）——
+    //    重复的永远是"手上刚写下的那几个字"，不是整句的尾巴
+    const tail = cjk.slice(-(Math.random() < 0.5 ? 2 : 1));
+    const n = 1 + ((Math.random()*2)|0) + (totalMicro >= 2 ? 1 : 0);
     let out = '';
     for(let i=0;i<n;i++) out += tail;
     return out;
   }
-  if(r < 0.62){
-    // ② 插入族：混入与任务无关的词（Morandin：item intrusion）
-    const w = INTRUDE[(Math.random()*INTRUDE.length)|0];
-    return Math.random() < 0.5 ? w : w + keyString(2 + ((Math.random()*3)|0));
+  // ② 同音族：音对了、字错了——中文输入法下注意力掉线最真实的样子
+  if(cjk.length >= 1){
+    const k = 2 + ((Math.random()*3)|0);
+    const start = (Math.random()*Math.max(1, cjk.length - 2))|0;
+    return homophone(cjk.slice(start, start + k));
   }
-  // ③ 键串族：流畅但无意义的相邻键敲击（潘集阳 2026 病例）
-  return keyString(4 + ((Math.random()*3)|0) + totalMicro);
+  // 兜底：键串（潘集阳 2026 病例的相邻键敲击，极少出现）
+  return keyString(3 + ((Math.random()*2)|0));
 }
 function swapOrder(){ // ④ 语序族：对调已写的两个相邻汉字（Morandin：sequencing error）
   const v = input.value;
@@ -974,17 +1108,22 @@ function garble(text){
     segs.push(text.slice(i, i+n));
     i += n;
   }
-  const gaps = segs.length - 1;
-  if(gaps <= 0) return text + makeGib(text);
-  let k = Math.min(gaps, 4 + ((Math.random()*3)|0));
-  const idx = [...Array(gaps).keys()];
-  for(let j=idx.length-1;j>0;j--){
-    const r = (Math.random()*(j+1))|0;
-    [idx[j], idx[r]] = [idx[r], idx[j]];
+  if(segs.length < 2) return text + makeGib(text);
+  // ① 字序错乱只发生在局部：相邻两小段互换 1–2 处（不是整句打乱）
+  const swaps = 1 + ((Math.random()*2)|0);
+  for(let s=0;s<swaps;s++){
+    const p = (Math.random()*(segs.length-1))|0;
+    [segs[p], segs[p+1]] = [segs[p+1], segs[p]];
   }
-  const chosen = new Set(idx.slice(0,k));
+  // ② 插入：在 3–4 处漏进去刚写过的那几个字 / 同音字
+  const k = Math.min(segs.length, 3 + ((Math.random()*2)|0));
+  const picks = new Set();
+  while(picks.size < k) picks.add((Math.random()*segs.length)|0);
   let out = '';
-  segs.forEach((s,j)=>{ out += s; if(chosen.has(j)) out += makeGib(text); });
+  segs.forEach((s,j)=>{
+    out += s;
+    if(picks.has(j)) out += makeGib(s + (segs[j+1] || ''));
+  });
   return out;
 }
 
@@ -999,8 +1138,7 @@ function addTimePill(t){
   const s = document.createElement('span'); s.textContent = t;
   w.appendChild(s); msgsEl().appendChild(w); scrollMsgs();
 }
-function addMsg(who, text, time, mine=false, role=''){
-  chatLog.push({kind:'msg', who, text, time, mine, role});
+function msgNode(who, text, time, mine=false, role=''){
   const m = document.createElement('div');
   m.className = 'msg' + (mine ? ' mine' : '');
   const av = document.createElement('div');
@@ -1025,7 +1163,16 @@ function addMsg(who, text, time, mine=false, role=''){
     col.appendChild(t);
   }
   m.appendChild(av); m.appendChild(col);
-  msgsEl().appendChild(m); scrollMsgs();
+  return m;
+}
+function timeNode(t){
+  const w = document.createElement('div'); w.className = 'timepill';
+  const s = document.createElement('span'); s.textContent = t;
+  w.appendChild(s); return w;
+}
+function addMsg(who, text, time, mine=false, role=''){
+  chatLog.push({kind:'msg', who, text, time, mine, role});
+  msgsEl().appendChild(msgNode(who, text, time, mine, role)); scrollMsgs();
 }
 function sysNote(text){
   chatLog.push({kind:'sys', text});
@@ -1034,6 +1181,31 @@ function sysNote(text){
   w.appendChild(s); msgsEl().appendChild(w); scrollMsgs();
 }
 function scrollMsgs(){ const el = msgsEl(); if(el) el.scrollTop = el.scrollHeight; }
+
+/* ── 今早更早的记录：不在开头出现 ──
+   等同学说了"又来了"，玩家自己往上翻，才会撞见这三次。 */
+const HISTORY = [
+  { k:'t', t:'上午 8:47' },
+  { k:'m', who:'我',   text:'好的好的好的我马上到马上到', time:'8:47', mine:true },
+  { k:'m', who:'张晓雨', text:'？' },
+  { k:'m', who:'王浩',   text:'你打错了吧' },
+  { k:'t', t:'上午 8:53' },
+  { k:'m', who:'我',   text:'嗯嗯快点快点块点', time:'8:53', mine:true },
+  { k:'m', who:'陈思琪', text:'？？？' },
+  { k:'t', t:'上午 9:04' },
+  { k:'m', who:'我',   text:'我可克以餐家，州五下午有空', time:'9:04', mine:true },
+  { k:'m', who:'张晓雨', text:'你今天第几次了啊' },
+];
+function prependHistory(){
+  const el = msgsEl(); if(!el) return;
+  const frag = document.createDocumentFragment();
+  HISTORY.forEach(it=>{
+    frag.appendChild(it.k === 't'
+      ? timeNode(it.t)
+      : msgNode(it.who, it.text, it.time, !!it.mine, it.role || ''));
+  });
+  el.insertBefore(frag, el.firstChild);
+}
 
 /* 手机屏幕 UI 状态（drawChat 每帧读取，仅锁屏用） */
 const phoneUI = { locked:true, label:'照着这句打，打完按回车或点发送：', ref:'', sendReady:false };
@@ -1257,23 +1429,18 @@ function hintTop(text, dur=5000){
 }
 function hintHide(){ const h = $('#corHint'); h.classList.remove('show'); h.classList.remove('atTop'); }
 
-/* ══════════ 幕本一（班级群，三段任务） ══════════ */
+/* ══════════ 幕本一（班级群，一次发作） ══════════
+   发作点只有一个：按下发送的那一下。打字的过程是清醒的、一字不错的——
+   正因为打出来的字完全正确，屏幕上出现的那条才不可解释。 */
 const PHASES = [
   { ref:'好的，我可以参加，周五下午有空，没有其他安排',
-    micro: 3 + (Math.random()<0.5?1:0), my:'9:17',
-    replies:[['张晓雨','？？？'],['王浩','什么意思？'],['陈思琪','你手机坏了吗？'],['刘洋','看不懂……']] },
-  { ref:'不好意思，我是想说我可以参加',
-    micro: 1 + (Math.random()<0.5?1:0), my:'9:18',
-    replies:[['张晓雨','？？还是看不懂']] },
-  { ref:'我可以参加活动',
-    micro: 1 + (Math.random()<0.5?1:0), my:'9:19',
-    replies:[['陈思琪','算了，你直接找班长当面说吧……']] },
+    my:'9:17',
+    replies:[['张晓雨','又来了……'],['王浩','他今天第几回了'],['陈思琪','别催他，等他自己醒'],['刘洋','……']] },
 ];
 
 const input = $('#inp');
 const sendBtn = $('#sendBtn');
-let phaseIdx = -1, microLeft = 0, busy = false;
-let lastSeen = 0, sinceMicro = 0, nextAt = 99, firstMicro = true;
+let phaseIdx = -1, busy = false;
 
 function committedCount(){
   const m = input.value.match(CJK_RE);
@@ -1292,10 +1459,6 @@ function startPhase(i){
   $('#refText').textContent = ph.ref;
   $('#taskLabel').textContent = '照着这句打，打完按回车或点发送：';
   sendBtn.classList.add('ready');
-  microLeft = ph.micro;
-  lastSeen = 0;
-  sinceMicro = 0;
-  nextAt = 3 + ((Math.random()*5)|0);
   busy = false;               // send() 之后 busy 不会自行复位，必须在这里重置
   composing = false;
   input.disabled = false; input.value = '';
@@ -1303,99 +1466,84 @@ function startPhase(i){
   input.focus();
 }
 
-/* 黑屏调度：每累计提交 3–7 个汉字触发一次，剩余次数用完为止。
-   用增量计数（sinceMicro），删除乱码不会把进度打成负数。 */
-function maybeTriggerMicro(){
-  if(busy || blacking || composing || phaseIdx < 0) return;
-  if(microLeft <= 0) return;
-  const c = committedCount();
-  if(c > lastSeen){ sinceMicro += c - lastSeen; lastSeen = c; }
-  else if(c < lastSeen){ lastSeen = c; }   // 删字：从当前位置重新累计
-  if(sinceMicro >= nextAt){
-    sinceMicro = 0;
-    nextAt = 3 + ((Math.random()*5)|0);
-    triggerMicro();
-  }
-}
-function triggerMicro(){
-  microLeft--;
-  busy = true;
-  composing = false;          // 即将禁用输入框：强制结束输入法会话，防止 compositionend 不派发导致标志卡死
-  input.blur();
-  input.disabled = true;
-  setTimeout(()=>{
-    const dur = (500 + Math.random()*300) * (FAST ? 0.6 : 1);
-    blackout(dur, { onWake(){
-      totalMicro++;
-      insertGarbage();
-      input.disabled = false;
-      busy = false;
-      lastSeen = committedCount();
-      sinceMicro = 0;
-      updateCount();
-      input.focus();
-    }});
-  }, 120 + Math.random()*380);
-}
-function insertGarbage(){
-  const g = makeGib();
-  const pos = input.selectionStart ?? input.value.length;
-  const v = input.value;
-  input.value = v.slice(0,pos) + g + v.slice(pos);
-  input.setSelectionRange(pos + g.length, pos + g.length);
-  // ④ 语序族：发作后期额外打乱已写内容的字序
-  if(totalMicro >= 2 && Math.random() < 0.4) swapOrder();
-}
-
-/* 发送 → 长黑屏 → 乱码发出 → 同学回复 */
+/* 发送 → 字自己改写 → 黑屏 → 那条乱码已经发出去了
+   睡觉的点就在按下发送这一下：手还在动，字还在变，人已经不在。 */
 function send(){
-  if(busy || input.disabled || phaseIdx < 0) return;
+  if(busy || phaseIdx < 0) return;
   const raw = input.value.trim();
   if(!raw) return;
   busy = true;
-  input.disabled = true;
-  input.value = '';
-  updateCount();
+  input.disabled = true;          // 停住键盘，接下来动的不是他
   sendBtn.classList.remove('ready');
   phoneUI.sendReady = false;
   const ph = PHASES[phaseIdx];
   const sent = garble(raw);
-  $('#taskLabel').textContent = '消息发送中……';
+  $('#taskLabel').textContent = '发送中……';
   $('#refText').textContent = '';
   $('#taskCount').textContent = '';
-  blackout(D(2600), { long:true, onWake(){
-    addMsg('我', sent, ph.my, true);
-    SFX.pop();
-    let t = 900 + Math.random()*600;
-    ph.replies.forEach(([who, txt])=>{
-      t += 1000 + Math.random()*800;
-      setTimeout(()=>{ addMsg(who, txt); SFX.pop(); }, D(t));
-    });
-    setTimeout(()=>{
-      if(phaseIdx < PHASES.length - 1) startPhase(phaseIdx + 1);
-      else finale();
-    }, D(t + 1700));
-  }});
+  // 框里的字被一个字一个字改成它最后发出去的样子（约 0.6 秒）
+  const steps = Math.max(3, Math.min(7, Math.ceil(sent.length / 4)));
+  let k = 0;
+  const rewrite = ()=>{
+    k++;
+    const n = Math.round(sent.length * k / steps);
+    input.value = sent.slice(0, n);
+    const p = input.value.length;
+    try{ input.setSelectionRange(p, p); }catch(e){}
+    if(k < steps){ setTimeout(rewrite, 70 + Math.random()*60); }
+    else setTimeout(deliver, 220);
+  };
+  const deliver = ()=>{
+    input.value = '';
+    blackout(D(2400), { long:true, onWake(){
+      addMsg('我', sent, ph.my, true);
+      SFX.pop();
+      let t = 900 + Math.random()*600;
+      ph.replies.forEach(([who, txt])=>{
+        t += 1000 + Math.random()*800;
+        setTimeout(()=>{ addMsg(who, txt); SFX.pop(); }, D(t));
+      });
+      setTimeout(()=>{
+        if(phaseIdx < PHASES.length - 1) startPhase(phaseIdx + 1);
+        else finale();
+      }, D(t + 1700));
+    }});
+  };
+  setTimeout(rewrite, 260);
 }
+/* 结局：不是"大家沉默了"，而是"往上翻，你早就说过好几回" */
 function finale(){
-  sysNote('群里安静了下来……');
-  $('#taskLabel').textContent = '没有人在说话。';
+  phoneUI.sendReady = false;
+  $('#taskLabel').textContent = '往上翻聊天记录';
   $('#refText').textContent = '';
   $('#taskCount').textContent = '';
-  phoneUI.sendReady = false;
-  setTimeout(transition, D(3400));
+  setTimeout(()=>{
+    // 此刻才把更早的记录插进来——玩家是"往上翻"才发现的，不是一开场就被告知
+    prependHistory();
+    $('#taskLabel').textContent = '今天早上 8:47 起……';
+    const el = msgsEl();
+    // 提示做成聊天里的系统行，不浮在手机外面遮挡界面
+    const note = document.createElement('div');
+    note.className = 'sysline';
+    const ns = document.createElement('span');
+    ns.textContent = '这些字，都是你打的。你一条都不记得。';
+    note.appendChild(ns);
+    const anchor = [...el.querySelectorAll('.timepill')].find(p=>p.textContent.indexOf('9:15') >= 0);
+    el.insertBefore(note, anchor || null);
+    el.scrollTo({ top: 0, behavior: 'smooth' });
+  }, D(1400));
+  setTimeout(()=>{
+    addMsg('李明', '你先别管义卖了。下午数学测验，撑不住就跟老师说一声。', '9:20', false, '班长（群主）');
+  }, D(8600));
+  setTimeout(transition, D(11600));
 }
 
 /* ══════════ 输入事件（聊天） ══════════ */
 let composing = false;
 input.addEventListener('compositionstart', ()=>{ composing = true; });
-input.addEventListener('compositionend', ()=>{ composing = false; updateCount(); maybeTriggerMicro(); });
+input.addEventListener('compositionend', ()=>{ composing = false; updateCount(); });
 input.addEventListener('blur', ()=>{ composing = false; });   // 输入框被禁用会中断输入法会话，compositionend 可能不派发
-setInterval(()=>{ if(phaseIdx >= 0) maybeTriggerMicro(); }, 350);  // 兜底巡检，防输入事件丢失
-input.addEventListener('input', ()=>{
-  updateCount();
-  maybeTriggerMicro();
-});
+input.addEventListener('input', ()=>{ updateCount(); });
 input.addEventListener('keydown', e=>{
   SFX.ensure();
   if(input.disabled) return;
@@ -1489,6 +1637,7 @@ function loop(now){
   const dt = Math.min(0.05, (now - lastFrame)/1000);
   lastFrame = now;
   if(!blacking && world.update) world.update(dt);
+  if(!blacking){ updateCamTween(dt); updateCataplexy(dt); }
   renderer.render(world.scene, world.cam);
   requestAnimationFrame(loop);
 }
@@ -1847,6 +1996,8 @@ function pickupPhone(){
     $('#world3d').classList.add('dim');
     $('#stage').classList.add('on');
     input.focus();
+    // 困：不是断电，是从早上睁眼起就没清亮过
+    setTimeout(()=>{ say('', '昨晚醒过四次。今天还有一整天的课。', 3000); }, 500);
   }, 520);
 }
 /* 点击：未拿起 → 命中手机即拿起；之后聊天在 2D 手机上进行（真实输入框） */
@@ -2263,12 +2414,12 @@ function corridorBlackout(){
   }});
 }
 
-/* 第一幕走廊（结尾改为进入教室） */
+/* 第一幕走廊（结尾改为进入教室）
+   一条走廊只断一次——每一段都断片，反而把病演成了特效。 */
 function startCorridor(){
   startWorld(makeCorridorWorld({
     events: [
-      { at: 5 + Math.random()*3 },
-      { at: 13 + Math.random()*3 },
+      { at: 9 + Math.random()*3 },
     ],
     endZ: -23.0,
     sign: '高二(3)班',
@@ -2390,7 +2541,7 @@ function makeClassroomWorld(){
       g.fillStyle = 'rgba(240,244,238,.92)';
       g.font = '600 64px "Kaiti SC","KaiTi","PingFang SC",serif';
       g.textAlign = 'center';
-      g.fillText('八年级数学测验　·　时间 60 分钟', 512, 150);
+      g.fillText('高二数学测验　·　时间 60 分钟', 512, 150);
       g.strokeStyle = 'rgba(240,244,238,.5)'; g.lineWidth = 3;
       g.beginPath(); g.moveTo(90, 210); g.lineTo(934, 210); g.stroke();
     }) }));
@@ -2782,8 +2933,9 @@ const EXAM_EVENTS = [
   { q:2, clock:[2,25], sev:2 },
   { q:2, clock:[2,35], sev:3 },
 ];
-let evIdx = 0, examChars = 0, nextEvAt = 8;
-let activeQ = 1, longArmed = false, longCharBase = 0, longTimer = null;
+let evIdx = 0, examChars = 0;
+let activeQ = 1, longArmed = false, longTimer = null;
+let q2Astonished = false;
 const carets = { 1:null, 2:null };
 const answers = { 1: [], 2: [] };   // span 缓存
 
@@ -2795,6 +2947,7 @@ function showExam(){
   hintHide();
   say('老师', '现在开始答题，注意时间。', 2600, ()=>{
     hintTop('点击「解：」后面的横线，照着灰色步骤打字', 0);
+    // 下午第一场考试，是这个病最不讲理的时间点
   });
 }
 function focusQ(q){
@@ -2808,9 +2961,19 @@ function focusQ(q){
   $('#dimmer').classList.add('on');
   $('#q1').classList.toggle('dim', q !== 1);
   $('#q2').classList.toggle('dim', q !== 2);
+  $('#q1').classList.toggle('gone', q === 2);
   inputEl(q).disabled = false;
   setTimeout(()=>inputEl(q).focus(), 50);
   hintHide();
+  if(q === 2 && answers[2].length && !q2Astonished){
+    q2Astonished = true;
+    setTimeout(()=>toast('第二题的横线上，已经写着一行不是你写的字。'), 800);
+  }
+  // 翻到这一题，计时开始——跟写多少字无关
+  if(evIdx < EXAM_EVENTS.length && EXAM_EVENTS[evIdx].q === q && evArmedQ !== q){
+    evArmedQ = q;
+    scheduleExamEvent(4000 + Math.random()*2500);
+  }
 }
 function blurQ(){
   [1,2].forEach(q=>{
@@ -2846,22 +3009,37 @@ function popCh(q){
   const last = arr.pop();
   if(last) last.remove();
 }
-/* 失控书写：重复 + 歪斜 + 出格 + 涂抹（Sahu 病例 / Morandin 分类） */
+/* 失控书写：重复 + 写错位置 + 整行重抄 + 歪斜出格（Sahu 病例 / Morandin 分类）
+   注意：自动行为产出的是"和手头任务同源的碎片"——重复刚写的那一行、把这一题
+   的答案写到那一题、公式写一半。不会突然冒出"回家睡觉"这种和卷面无关的句子，
+   那是影视里的失神发作，不是发作性睡病。 */
+function pushChunk(q, txt, arr){
+  if(!txt) return null;
+  const s = document.createElement('span');
+  s.className = 'ch t' + (1 + ((Math.random()*4)|0));
+  s.textContent = txt;
+  ansEl(q).insertBefore(s, inputEl(q));
+  arr.push(s);
+  return s;
+}
 function corrupt(q, sev){
   const arr = answers[q];
   if(arr.length === 0) return;
-  // A+B. 重复书写最后 1–2 个字符
-  const nRep = Math.min(arr.length, 1 + ((Math.random()*2)|0));
-  const tail = arr.slice(-nRep).map(s=>s.textContent).join('');
-  const copies = 2 + ((Math.random()*2)|0) + sev;
-  for(let i=0;i<copies;i++){
-    const s = document.createElement('span');
-    s.className = 'ch t' + (1 + ((Math.random()*4)|0));
-    s.textContent = tail[(Math.random()*tail.length)|0];
-    ansEl(q).insertBefore(s, inputEl(q));
-    arr.push(s);
+  const text = arr.filter(s=>s.textContent).map(s=>s.textContent).join('');
+  if(!text) return;
+  // A. 重复族：把最后 2–4 个字整体重写 1–2 遍（不是单字乱撒）
+  if(arr.length < 80){
+    const tail = text.slice(-(2 + ((Math.random()*3)|0)));
+    const reps = 1 + ((Math.random()*2)|0) + (sev >= 3 ? 1 : 0);
+    for(let i=0;i<reps;i++) pushChunk(q, tail, arr);
   }
-  // C. 歪斜 / 出格：随机污染已有笔迹
+  // B. 写错位置：把这一题的内容写到另一题的横线上（Sahu 病例最典型的一种）
+  if(sev >= 2 && Math.random() < 0.5) crossWrite(q === 1 ? 2 : 1, q, sev);
+  // C. 整行重抄：把刚才写过的一小段原样再写一遍
+  if(sev >= 2 && Math.random() < 0.5 && text.length > 6){
+    pushChunk(q, text.slice(-(6 + ((Math.random()*5)|0))), arr);
+  }
+  // D. 歪斜 / 出格：随机污染已有笔迹
   const nTilt = Math.min(arr.length, 4 + sev*3);
   for(let i=0;i<nTilt;i++){
     const s = arr[(Math.random()*arr.length)|0];
@@ -2876,22 +3054,47 @@ function corrupt(q, sev){
   ansEl(q).insertBefore(ns, inputEl(q));
   arr.push(ns);
 }
+/* 写错位置：把第 srcQ 题的内容，落到第 targetQ 题的横线上。
+   内容取自那道题本来就该写的东西——是"串行"，不是"凭空乱写"。 */
+const Q_CONTENT = {
+  1: ['f′(1) = 3 − 6', '3x² − 6x', '= −3', 'x²'],
+  2: ['1210', '3310', '1000 × 1.1²', '三月份'],
+};
+function crossWrite(targetQ, srcQ, sev){
+  const arr = answers[targetQ];
+  if(!arr) return;
+  const pool = Q_CONTENT[srcQ] || Q_CONTENT[1];
+  const n = 1 + ((Math.random()*2)|0) + (sev >= 3 ? 1 : 0);
+  for(let i=0;i<n;i++) pushChunk(targetQ, pool[(Math.random()*pool.length)|0], arr);
+}
+/* ══ 发作节奏：不按字数算 ══
+   坐着做题本身就是诱因——时间到了它就来，跟玩家打了多少字无关。
+   计时从"翻到这一题"开始；撞上别的黑屏就顺延，绝不吞掉。 */
+let evTimer = null, evWaited = 0, evArmedQ = 0;
+function clearEvTimer(){ if(evTimer){ clearTimeout(evTimer); evTimer = null; } }
+function scheduleExamEvent(delay){
+  clearEvTimer();
+  if(SHOT || evIdx >= EXAM_EVENTS.length) return;
+  if(EXAM_EVENTS[evIdx].q !== activeQ) return;
+  const wait = delay != null ? delay : (6500 + Math.random()*4500);
+  evTimer = setTimeout(()=>{
+    evTimer = null;
+    if(blacking){ scheduleExamEvent(900); return; }
+    if(evIdx >= EXAM_EVENTS.length || EXAM_EVENTS[evIdx].q !== activeQ) return;
+    // 还没落笔就先等一会儿——不然没有笔迹可写坏；等过三轮就照常发作
+    if(answers[activeQ].length < 3 && evWaited < 3){ evWaited++; scheduleExamEvent(1500); return; }
+    evWaited = 0;
+    fireExamEvent();
+  }, D(wait));
+}
 function checkExamTrigger(){
   if(SHOT || blacking) return;
-  if(evIdx < EXAM_EVENTS.length){
-    if(EXAM_EVENTS[evIdx].q === activeQ && examChars >= nextEvAt){
-      fireExamEvent();
-    }
-  }else if(longArmed && examChars - longCharBase >= 6){
-    disarmLong();
-    fireLongBlackout();
-  }
   if(activeQ === 1 && answers[1].length >= 8) $('#next1').classList.add('show');
 }
 let firstExamEvent = true;
 function fireExamEvent(instant){
   const ev = EXAM_EVENTS[evIdx++];
-  nextEvAt = examChars + 6 + ((Math.random()*5)|0);
+  clearEvTimer();
   if(evIdx === EXAM_EVENTS.length) armLong();
   const dur = instant ? 500 : (550 + Math.random()*300) * (FAST ? 0.6 : 1);
   blurInput();
@@ -2903,6 +3106,7 @@ function fireExamEvent(instant){
       firstExamEvent = false;
       toast('醒来时，钟已经悄悄走了几分钟——而你什么都不知道。');
     }
+    if(evIdx < EXAM_EVENTS.length) scheduleExamEvent();
   }});
 }
 function blurInput(){ const i = inputEl(activeQ); if(i) i.blur(); }
@@ -2924,19 +3128,22 @@ $('#next1').addEventListener('click', ()=>{
 });
 function goToQ2(){
   $('#next1').classList.remove('show');
-  const drain = ()=>{
+  const turn = ()=>{
+    if(blacking){ setTimeout(turn, 500); return; }
+    // 第一题还欠着一次发作：翻页前先让它来一次（只补一次，不连着断两回）
     if(evIdx < EXAM_EVENTS.length && EXAM_EVENTS[evIdx].q === 1){
       fireExamEvent(true);
-      setTimeout(drain, 950);
-    }else{
-      blurQ();
-      setTimeout(()=>{
-        focusQ(2);
-        nextEvAt = examChars + 6 + ((Math.random()*4)|0);
-      }, 500);
+      while(evIdx < EXAM_EVENTS.length && EXAM_EVENTS[evIdx].q === 1) evIdx++;
+      setTimeout(turn, 950);
+      return;
     }
+    blurQ();
+    setTimeout(()=>{
+      focusQ(2);
+      scheduleExamEvent(2600 + Math.random()*1800);
+    }, 500);
   };
-  drain();
+  turn();
 }
 
 /* 答题输入（span 手写 + 隐藏 input 捕获） */
@@ -2974,16 +3181,15 @@ function bindAnswer(q){
 bindAnswer(1);
 bindAnswer(2);
 
-/* 长黑屏布防 */
+/* 长黑屏布防：最后一次小发作之后，再撑 12 秒就断 */
 function armLong(){
   longArmed = true;
-  longCharBase = examChars;
   longTimer = setTimeout(function tickLong(){
     if(!longArmed) return;
     // 若正撞上别的黑屏，blackout 会直接 return → 醒不来会导致考试卡死；延后再试
     if(blacking){ longTimer = setTimeout(tickLong, 700); return; }
     disarmLong(); fireLongBlackout();
-  }, 14000);
+  }, D(12000));
 }
 function fireLongBlackout(){
   blurInput();
@@ -2995,6 +3201,8 @@ function fireLongBlackout(){
 
 /* 醒来 · 考试结束 */
 function wakeEnd(){
+  clearEvTimer();
+  disarmLong();
   drawClock(3, 30);
   blurQ();
   $('#q2').classList.remove('dim');
@@ -3018,9 +3226,11 @@ function wakeEnd(){
       if(w) w.teacherTarget = { x: SEAT.x + 1.0, z: SEAT.z + 0.6 };
       setTimeout(()=>{
         say('老师', '同学，你是不是不舒服？', 2600, ()=>{
-          say('老师', '试卷怎么写成这样……你先休息一下吧。', 3000, ()=>{
-            if(w) w.teacherTarget = { x: -2.6, z: -3.2 };
-            setTimeout(showBag, 1600);
+          say('老师', '你一直在低头写……我还以为你在拼命答。', 3200, ()=>{
+            say('老师', '试卷怎么写成这样。你先休息一下吧。', 3000, ()=>{
+              if(w) w.teacherTarget = { x: -2.6, z: -3.2 };
+              setTimeout(showBag, 1600);
+            });
           });
         });
       }, 3400);
@@ -3085,15 +3295,32 @@ function whisper(){
   say('同桌 小雨', '你刚才是睡着了吗？考试的时候睡着了？', 3000, ()=>{
     say('后排同学（小声）', '他脸色看起来不太好……', 2400, ()=>{
       say('同桌 小雨', '但是考试睡觉也太……', 2200, ()=>{
-        // 起身离开
-        const w = classroomW;
-        if(w){
-          w.state = 'exit';
-          w.moveEnabled = true;
-          w.cam.position.set(SEAT.x, 1.6, SEAT.z + 0.55);
-          w.cam.lookAt(DOOR.x, 1.5, DOOR.z);
-        }
-        hintTop('离开教室 —— 朝门口走', 0);
+        say('后排同学', '（压抑的笑声）', 1600, ()=>{
+          // 猝倒：笑声触发的肌张力丧失。意识清楚，人没倒——所以不黑屏
+          cataplexy(1600, ()=>{
+            say('我', '（膝盖突然软了一下，扶住桌沿才没滑下去。声音还在，动不了。）', 3600, ()=>{
+              say('同桌 小雨', '你怎么了？脸都白了，我去叫老师。', 2800, ()=>{
+                // 起身：从坐姿撑起来、转向门口——一路上都是补间，不硬切
+                const w = classroomW;
+                if(w){
+                  w.state = 'stand';
+                  w.moveEnabled = false;
+                  tweenCam(w.cam, {
+                    x: SEAT.x, y: 1.6, z: SEAT.z + 0.55,
+                    look: { x: DOOR.x, y: 1.5, z: DOOR.z },
+                  }, 1.7, ()=>{
+                    if(w.state !== 'stand') return;
+                    w.state = 'exit';
+                    w.moveEnabled = true;
+                    hintTop('离开教室 —— 朝门口走', 0);
+                  });
+                }else{
+                  hintTop('离开教室 —— 朝门口走', 0);
+                }
+              });
+            });
+          });
+        });
       });
     });
   });
@@ -3108,7 +3335,6 @@ function startCorridorAfterSchool(){
   setTimeout(()=>{
     startWorld(makeCorridorWorld({
       events: [
-        { at: 5.5 + Math.random()*2.5 },
         { at: 11 + Math.random()*2.5 },
       ],
       endZ: -23.0,
@@ -3132,7 +3358,7 @@ function afterSchool(){
 /* ════════════════════════════════════════════
    第三幕 · 放学后 · 过马路
    证据锚点：Avis 等 2014（SLEEP）——VR 过马路任务中，
-   发作性睡病患者被车辆撞击次数约为对照组 2 倍。
+   发作性睡病病友被车辆撞击次数约为对照组 2 倍。
    演出禁令：只做「险情」（失控偏移 / 急刹 / 喇叭），
    车全部停在安全距离，不做碰撞事故演出。
    ════════════════════════════════════════════ */
@@ -3573,8 +3799,7 @@ function makeStreetWorld(){
       }else st.stuckT = 0;
       // 阶段推进
       if(st.state === 'walk1'){
-        if(!st.walkFired[0] && cam.position.z <= -8.2){ st.walkFired[0] = true; streetMicro('offset'); }
-        if(!st.walkFired[1] && cam.position.z <= -10.4){ st.walkFired[1] = true; streetMicro('jump'); }
+        // 一段路不再连续断片——整条街只留三次：一次眨眼、一次险情、一次绿灯早亮
         if(cam.position.z <= ROAD_Z[0] + 2.1) beginWait(0);
       }else if(st.state === 'cross1'){
         if(!st.fired[0] && cam.position.z <= ROAD_Z[0] + 0.4){ st.fired[0] = true; fireRoadEvent(0); }
@@ -3582,12 +3807,10 @@ function makeStreetWorld(){
       }else if(st.state === 'walk2'){
         if(cam.position.z <= ROAD_Z[1] + 2.1) beginWait(1);
       }else if(st.state === 'cross2'){
-        if(!st.fired[1] && cam.position.z <= ROAD_Z[1] + 0.4){ st.fired[1] = true; fireRoadEvent(1); }
         if(cam.position.z <= ROAD_Z[1] - 2.1) arriveAcross(1);
       }else if(st.state === 'walk3'){
         if(cam.position.z <= ROAD_Z[2] + 2.1) beginWait(2);
       }else if(st.state === 'cross3'){
-        if(!st.fired[2] && cam.position.z <= ROAD_Z[2] + 0.4){ st.fired[2] = true; fireRoadEvent(2); }
         if(cam.position.z <= ROAD_Z[2] - 2.1) arriveAcross(2);
       }
     }
@@ -3719,6 +3942,10 @@ function roadWake(i){
   const band = [rz - 1.15, rz + 1.15];   // 踉跄不许出路面
   if(i === 0){
     voiceLine('司机', '小心点啊！');
+    // 后果：他下车了。不是"差点"，是"有人真的被你吓到了"
+    setTimeout(()=>{ SFX.door(); }, 600);
+    voiceLine('司机', '……你没事吧？要不要我打个电话给你家长？', 1100);
+    voiceLine('路人', '这孩子脸色不对啊，先扶到路边去。', 2400);
     w.forced = { vx: -1.25, vz: 0.22, t: 1.5, band };
   }else if(i === 1){
     voiceLine('司机', '喂！你在干什么！', 0);
@@ -3736,7 +3963,7 @@ function roadWake(i){
     voiceLine('路人', '叫救护车！', 2000);
     w.forced = { vx: -1.45, vz: 0.18, t: 2.2, band };
   }
-  const recover = [1.6, 2.0, 2.4][i];
+  const recover = [3.6, 2.0, 2.4][i];
   setTimeout(()=>{
     if(streetW !== w || w.state === 'freeze') return;
     w.inputOn = true;                      // 不再看状态是否还停在 cross*，防止错过时机卡死
@@ -3789,8 +4016,16 @@ function streetFreeze(){
   w.state = 'freeze';
   w.inputOn = false;
   w.forced = null;
+  w.look = null;
   hintHide();
-  w.cam.lookAt(w.cam.position.x, 1.2, w.cam.position.z + 9);   // 转回刚才过来的方向
+  // 转回刚才过来的方向：慢慢转，不是一帧掰过去。
+  // 目标点偏开一点，转向的轴才确定，不会在中途打滑。
+  tweenCam(w.cam, {
+    x: w.cam.position.x,
+    y: w.cam.position.y,
+    z: w.cam.position.z,
+    look: { x: w.cam.position.x + 0.42, y: 1.18, z: w.cam.position.z + 9 },
+  }, 2.4);
   w.heartInt = 1.3;
   setTimeout(()=>{ if(streetW === w) w.heartOn = false; }, D(8000));
   setTimeout(()=>{ if(streetW === w) w.darkening = true; }, D(1500));
@@ -3805,28 +4040,29 @@ function fadeToWords(){
 }
 
 /* 文字序列 / 数据屏幕 / 结尾 */
+/* 短句，只留能站住的那几句。凑数的排比删了。 */
 const WORDS = [
   '这只是普通的一天',
-  '每一天都充满不确定',
-  '没有人理解',
-  '他们以为我只是不够努力',
-  '我无法解释',
-  '但生活还要继续',
-  '这是发作性睡病患者的日常',
+  '我以为只是没睡好',
+  '他们以为我不够努力',
+  '我解释不清',
+  '明天还要去上学',
+  '这是发作性睡病病友的日常',
 ];
+/* 只放能核实的：患病率 0.02–0.05%（每 2000–5000 人一例）；日间嗜睡是
+   诊断必需；猝倒约见于七成病友；自动行为实证发生率 20–40%；夜间睡眠
+   破碎在多数病友身上出现；确诊延迟通常以年计；PSG + MSLT 可确诊，
+   莫达非尼、替洛利生等可治疗。无法核实的精确数字一律不写。 */
 const DATA = [
-  ['发作性睡病影响全球约 300 万人', '在中国约有 70 万患者'],
-  ['约每 2000–3300 人中', '就有 1 人患病'],
-  ['100% 的患者会经历难以控制的日间嗜睡', '可能在吃饭、走路、考试时突然入睡'],
-  ['60–80% 的患者经历过自动行为', '在睡眠发作时无意识地继续执行任务'],
-  ['患者平均每天经历 3–5 次', '不可预测的睡眠发作'],
-  ['从出现症状到确诊', '平均需要 10 年以上'],
-  ['中国诊断率和治疗率均不足 1%', '确诊患者可能不足 5000 人'],
-  ['超过三分之二的患者', '在儿童期发病'],
-  ['许多患者被误认为', '懒惰、不专心或缺乏动力'],
-  ['自动行为产出的文字并非完全随机', '重复已有内容、插入无关词、字序错乱——来自对患者文本的研究'],
-  ['这不是选择', ''],
-  ['这是疾病', ''],
+  ['每 2000–5000 人里，约有 1 例', '中国估计有数十万病友'],
+  ['几乎每位病友都有日间嗜睡', '不是"有点困"，是压不住地想睡'],
+  ['约七成病友会猝倒', '大笑、生气时，肌肉突然没了力气'],
+  ['两到四成的病友有过自动行为', '人已经不在，手还在写'],
+  ['多数病友夜里也睡不安稳', '白天照样困，和睡了多久没关系'],
+  ['从发病到确诊，常常要等好几年', '在那之前，多半被当成懒、不专心'],
+  ['能确诊：多导睡眠监测 + 多次入睡试验', '能治疗：莫达非尼、替洛利生等'],
+  ['本作的发作经过压缩', '真实的一天，比这更长，也更安静'],
+  ['这不是懒', '这是病'],
 ];
 function playSeq(el, items, hold, gap, onDone){
   let i = 0;
@@ -3854,9 +4090,9 @@ function playSeq(el, items, hold, gap, onDone){
   next();
 }
 function startWordSeq(){
-  playSeq($('#wordSeq'), WORDS, 3000, 1500, ()=>{
+  playSeq($('#wordSeq'), WORDS, 2400, 1200, ()=>{
     setTimeout(()=>{
-      playSeq($('#dataSeq'), DATA, 5000, 1500, ()=>{
+      playSeq($('#dataSeq'), DATA, 4300, 1000, ()=>{
         setTimeout(showFinal, 2000);
       });
     }, 2000);
@@ -3885,7 +4121,7 @@ function autotestStreet(){
 
 /* ══════════ 启动 ══════════ */
 addTimePill('上午 9:15');
-addMsg('李明', '@全体成员 这周五下午3:00在体育馆有学校义卖活动，需要每个班派5名志愿者帮忙布置展台和销售物品。活动大概持续到5:30，结束后会有披萨聚餐。请大家尽快回复确认能不能参加，我要在今天中午12点前统计好名单交给年级组长。如果有特殊情况不能来也请说明一下，谢谢大家配合！', '9:15', false, '班长');
+addMsg('李明', '@全体成员 这周五下午3:00在体育馆有学校义卖活动，需要每个班派5名志愿者帮忙布置展台和销售物品。活动大概持续到5:30，结束后会有披萨聚餐。请大家尽快回复确认能不能参加，我要在今天中午12点前统计好名单交给年级组长。如果有特殊情况不能来也请说明一下，谢谢大家配合！', '9:15', false, '班长（群主）');
 
 function skipIntro(){
   $('#intro').classList.add('hide');
@@ -4262,14 +4498,14 @@ if(SHOT === 'classroom' || SHOT === 'exam' || SHOT === 'messy'){
       if(SHOT === 'messy'){
         $('#paperWrap').classList.remove('zoom');
         $('#q2').classList.remove('dim');
-        seedAnswer(1, '= 200 × 4 − 30');
+        seedAnswer(1, 'f′(x) = 3x² − 6x');
         corrupt(1, 2); corrupt(1, 2);
-        seedAnswer(2, '(1) 前半段距离 = 200 × 1515');
+        seedAnswer(2, '(1) 三月份产量 = 1000 × 1.1² = 1210 件');
         corrupt(2, 3);
       }else{
         $('#paperWrap').classList.add('zoom');
         focusQ(1);
-        seedAnswer(1, '200 × 4 − 8');
+        seedAnswer(1, 'f′(x) = 3x²');
       }
     }else{
       hintTop('走到你的座位 —— 按 W / ↑ 前进', 0);
@@ -4317,19 +4553,19 @@ if(Q.get('autotest') != null){
     classroomW.state = 'seated';
     $('#examUI').classList.add('on');
     focusQ(1);
-    const t1 = '200 × 4 − 30';
+    const t1 = 'f′(x) = 3x² − 6x';
     let i = 0;
     const type1 = setInterval(()=>{
       if(i < t1.length){ addCh(1, t1[i++]); return; }
       clearInterval(type1);
       goToQ2();
       setTimeout(()=>{
-        const t2 = '(1) 前半段距离 = 200 × 15 = 3000米';
+        const t2 = '(1) 三月份产量 = 1000 × 1.1² = 1210 件';
         let j = 0;
         const type2 = setInterval(()=>{
           if(j < t2.length){ addCh(2, t2[j++]); return; }
           clearInterval(type2);
-          setTimeout(()=>{ '6000 + 3000'.split('').forEach(c=>addCh(2,c)); }, 1200);
+          setTimeout(()=>{ '3310'.split('').forEach(c=>addCh(2,c)); }, 1200);
         }, 260);
       }, 2500);
     }, 260);
